@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'southbank';
+    src: url('./fonts/SouthbankLT.ttf') format('truetype');
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "southbank";
+}
+
+nav {
+    background-color: blanchedalmond;
+    padding: 30px 60px 30px 60px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 40px;
+}
+
+nav a {
+    margin-right: 100px;
+    text-decoration: none;
+    color: black;
+    margin: 40px;
+}
+
+nav a:hover {
+    color: grey;
+}
+
+.content {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 100px;
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    /* background-color: blue; */
+}
+
+.content p {
+    max-width: 600px;
+    font-size: 25px;
+    text-align: center;
+    margin: 0 auto;
+    /* background-color: red; */
+    /* margin-left: 100px; */
+    /* margin-top: 100px; */
+    /* display: flex;
+    align-items: center; */
+}
+
+.home-images {
+    min-width: 60vh;
+    max-height: 60vh;
+    /* margin-bottom: 100px; */
+}
+
+#image1 {
+    margin-right: 100px;
+}
+
+#image2 {
+    margin-left: 100px;
+}
+
+.mission {
+    display: flex;
+    flex-direction: column;
+    background-color: brown;
+    padding: 100px;
+}
+
+.mission p {
+    margin: 0 auto;
+    color: azure;
+    font-size: 48px;
+}
+
+#content1 {
+    /* background-color: green; */
+    display: flex; /
+}
+
+.action-btns {
+    display: flex;
+    justify-content: center;
+}
+
+.action-btn {
+    padding: 20px;
+    box-shadow: 5px 10px yellow;
+    border: 2px;
+    background-color: darkgreen;
+    color: azure;
+    font-family: "southbank";
+    font-size: 100px;
+    margin: 40px;
+    text-decoration: none;
+    text-align: center;
+    /* padding-top: 40px; */
+    padding: 40px;
+    padding-bottom: 20px;
+}
+
+.action-btn:hover {
+    color: black;
+}

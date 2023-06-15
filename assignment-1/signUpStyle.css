@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'southbank';
+    src: url('./fonts/SouthbankLT.ttf') format('truetype');
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "southbank";
+    background-color: ivory;
+}
+
+nav {
+    background-color: blanchedalmond;
+    padding: 30px 60px 30px 60px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 40px;
+}
+
+nav a {
+    margin-right: 100px;
+    text-decoration: none;
+    color: black;
+    margin: 40px;
+}
+
+nav a:hover {
+    color: grey;
+}
+
+form {
+    display: flex;
+    margin: auto; 
+    width:800px;
+    padding:20px;
+    background: ivory;
+    border:2px solid #333;
+    box-shadow: 5px 10px;
+}
+
+input {
+    margin-right: 15px;
+}
+
+h1 {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+h2{
+    text-align: center;
+    color:  gray;
+}
+
+h3 {
+    text-align: center;
+}
+
+.fname {
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.lname {
+    box-sizing: border-box;
+    margin: auto
+}
+
+.email {
+    /* box-sizing: border-box; */
+    margin: auto;
+}

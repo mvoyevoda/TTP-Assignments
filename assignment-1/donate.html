@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="donate.css">
+    <title>Donate</title>
+</head>
+<body>
+    <nav>
+        New York Hunger Organization
+        <div class="links">
+            <a href="./index.html">About</a>
+            <a href="./donate.html">Donate</a>
+            <a href="./signup.html">Sign Up</a>
+        </div>
+    </nav>
+
+    <form action="">
+        <h1>Donate today</h1>
+        <input type="radio" id="one_time" name="freq">
+        <label for="one_time">One time</label>
+        <input type="radio" id="monthly" name="freq">
+        <label for="one_time">Monthly</label>
+        <br>
+        <label for="Amount">Please choose the amount:</label> 
+        <input type="radio" id="35" name="amountToDon">
+        <label for="35">$35</label>
+        <input type="radio" id="50" name="amountToDon">
+        <label for="50">$50</label>
+        <input type="radio" id="100" name="amountToDon">
+        <label for="100">$100</label>
+        <input type="radio" id="other" name="amountToDon">
+        <input type="text" id="other" placeholder="other" size="2">
+        <h2 class="contact-info">Contact information</h2>
+        <input type="text" id="firstName" placeholder="First Name*" size="15" required>
+        <input type="text" id="lastName" placeholder="Last Name*" size="15" required>
+        <br>
+        <input type="text" id="BillingAddress1" placeholder="Billing address 1*" size="15" required>
+        <input type="text" id="BillingAddress2" placeholder="Billing address 2 (optional)" size="15">
+        <br>
+        <input type="text" id="City" placeholder="City*" size="15" required>
+        <select name="state" id="lang" >
+            <option value="State">State</option>
+            <option value="NY">NY</option>
+            <option value="NJ">NJ</option>
+            <option value="IL">IL</option>
+            <option value="TX">TX</option>
+            <option value="IN">IN</option>
+            <option value="KS">KS</option>
+            <option value="KY">KY</option>
+            <option value="AL">AL</option>
+          </select>
+          <br>
+        <input type="text" id="Zip" placeholder="Zip*" size="8" required>
+        <select name="Country" id="lang">
+            <option value="Country">Country</option>
+            <option value="United States">United States</option>
+            <option value="Canada">Canada</option>
+            <option value="Mexico">Mexico</option>
+          </select>
+          <br>
+          <input type="email" id="email" placeholder="Email address*" size="15" required>
+          <input type="Tel" id="Tel" placeholder="Mobile number*" size="15" required>
+          <br>
+          <input type="checkbox">
+          <label for="check">Yes, I would like to receive communication from NYHO.</label>
+          <br>
+          <input type="tel" id="cardNum" placeholder="Credit card number*" size="15" required>
+          <input type="tel" id="CVV" placeholder="CVV*" size="2" required>
+          <br>
+          <select name="Month" id="Month">
+            <option value="MM">MM</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+
+          </select>
+          <select name="Year" id="Year">
+            <option value="YY">YY</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+          </select>
+          <br>
+          <input type="submit" value="Donate"> 
+
+
+    </form>
+</body>
+</html>
