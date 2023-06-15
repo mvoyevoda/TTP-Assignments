@@ -18,4 +18,3 @@ function execute(val){
 }
 
 myEach(arr, execute)
-//efefefe
