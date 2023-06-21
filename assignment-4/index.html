@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Humblr</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Demotivational Posters</h1>
+  </header>
+
+  <div id="top">
+    <section class="poster">
+        <img id="poster-image" src="" alt="Motivational Poster">
+        <h2 id="poster-title">Title </h2>
+        <h3 id="poster-quote">"Quote goes here something motivating"</h3>
+    </section>
+  </div>
+  <button id="randomize">Randomize</button>
+
+  <br><br><br>
+
+  <div id="bottom">
+    <form id="poster-form" method="POST">
+        <input type="text" id="poster-form-quote" placeholder="enter custom quote..." required>
+        <input type="text" id="poster-form-title" placeholder="enter title..." required>
+        <input type="text" id="poster-form-image" placeholder="enter link to poster..." required>
+        <button id="submit">Submit</button>
+    </form>
+  </div>
+
+
+</body>
+
+</html>
