@@ -35,6 +35,10 @@ nav .right a {
   margin: 40px;
 }
 
+nav .right a:hover {
+  color: rgb(175, 171, 171);
+}
+
 .search-icon {
   /* position: relative; */
   width: 15px;
@@ -54,4 +58,22 @@ nav .right a {
 .library img {
   width: 20%;
   /* margin: 2%; */
+}
+
+.searchbar {
+  margin: 20px;
+  width: 0;
+  transition: width 2s ease-out; /* Transition effect for width */
+  visibility: hidden; /* Hidden by default */
+  background-color: white; /* Change the background color to white */
+  color: black; /* Change the text color to black */
+  border: none; /* Remove the border */
+  outline: none; /* Remove the default outline */
+  font-size: medium;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.searchbar.open {
+  width: 100%; /* Full width when open */
+  visibility: visible; /* Make it visible when open */
 }
