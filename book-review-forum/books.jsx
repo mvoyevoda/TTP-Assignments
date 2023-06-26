@@ -3,6 +3,7 @@ class Book {
         this.title = title;
         this.author = author;
         this.genre = genre;
+        this.rating = null;
     }
 }
 
@@ -17,6 +18,7 @@ const books = [
           name: "George P",
           comment: "This is a wonderful classic that everybody should read at least once!",
           date: null,
+          rating: 5,
         },
       ],
     },
@@ -30,6 +32,7 @@ const books = [
           name: "Emily W",
           comment: "A timeless romance novel that captures the complexities of society.",
           date: null,
+          rating: 4.3,
         },
       ],
     },
@@ -43,11 +46,13 @@ const books = [
           name: "John D",
           comment: "A chilling portrayal of a totalitarian society.",
           date: null,
+          rating: 4.9,
         },
         {
           name: "Sophia L",
           comment: "One of my favorite dystopian novels!",
           date: null,
+          rating: 4.8,
         },
       ],
     },
@@ -61,6 +66,7 @@ const books = [
           name: "Michael B",
           comment: "A coming-of-age story with a memorable protagonist.",
           date: null,
+          rating: 3.2,
         },
       ],
     },
@@ -74,6 +80,7 @@ const books = [
             name: "Robert M",
             comment: "An epic tale with rich world-building and unforgettable characters.",
             date: null,
+            rating: 4.4,
           },
         ],
       },
@@ -87,6 +94,7 @@ const books = [
             name: "Alice C",
             comment: "A powerful and thought-provoking novel with memorable characters.",
             date: null,
+            rating: 4.1,
           },
         ],
       },
@@ -100,6 +108,7 @@ const books = [
             name: "Emily R",
             comment: "A magical series that sparks the imagination.",
             date: null,
+            rating: 3.1,
           },
         ],
       },
@@ -113,6 +122,7 @@ const books = [
             name: "Daniel H",
             comment: "The beginning of an enchanting journey into the wizarding world.",
             date: null,
+            rating: 3,
           },
         ],
       },
@@ -126,6 +136,7 @@ const books = [
             name: "Sophie T",
             comment: "A beautiful story with inspiring messages about following your dreams.",
             date: null,
+            rating: 4.1,
           },
         ],
       },
@@ -139,22 +150,10 @@ const books = [
             name: "Michael S",
             comment: "A hilarious and clever space adventure that will leave you laughing.",
             date: null,
+            rating: 3.9,
           },
         ],
       },
-      // {
-      //   title: "Jane Eyre",
-      //   author: "Charlotte Brontë",
-      //   genre: "classic",
-      //   image: "../assets/jane.jpeg",
-      //   comments: [
-      //     {
-      //       name: "Olivia W",
-      //       comment: "A captivating novel with a strong-willed heroine and gothic elements.",
-      //       date: null,
-      //     },
-      //   ],
-      // },
   ];
   
   export default books;

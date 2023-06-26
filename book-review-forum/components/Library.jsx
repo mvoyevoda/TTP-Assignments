@@ -9,21 +9,22 @@ const Library = ({ searchQuery }) => {
     if (searchQuery === '') {
       setDisplayedBooks(books);
     } else {
+      console.log(searchQuery);
       const filteredBooks = books.filter((book) =>
-        checkTitle(book.title, searchQuery)
+        checkTitle(book.title, book.author, book.genre, searchQuery)
       );
       setDisplayedBooks(filteredBooks);
     }
   }, [searchQuery]);
 
-  const checkTitle = (title, searchQuery) => {
-    const lowerCaseTitle = title.toLowerCase();
+  const checkTitle = (title, author, genre, searchQuery) => {
+
     const lowerCaseQuery = searchQuery.toLowerCase();
-  
-    const titleLength = lowerCaseTitle.length;
-    const queryLength = lowerCaseQuery.length;
-  
-    // Iterate over the title string
+    const queryLength = searchQuery.length;
+
+    // Iterate over title string
+    const lowerCaseTitle = title.toLowerCase();
+    const titleLength = title.length;
     for (let i = 0; i <= titleLength - queryLength; i++) {
       // Get a substring of the title that's the same length as the search query
       const titleSubstring = lowerCaseTitle.slice(i, i + queryLength);
@@ -31,8 +32,22 @@ const Library = ({ searchQuery }) => {
         return true;
       }
     }
+    // Iterate over author string
+    const lowerCaseAuthor = author.toLowerCase();
+    const authorLength = author.length;
+    for (let i = 0; i <= authorLength - queryLength; i++) {
+      // Get a substring of the title that's the same length as the search query
+      const authorSubstring = lowerCaseAuthor.slice(i, i + queryLength);
+      if (authorSubstring === lowerCaseQuery) {
+        return true;
+      }
+    }
+    // Check genre (should be exact match, no substring check needed)
+    if (genre === searchQuery)
+      return true;
   
     return false;
+
   };
   
 

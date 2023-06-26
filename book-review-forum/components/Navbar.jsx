@@ -7,7 +7,6 @@ const Navbar = ({ searchQuery, setSearchQuery }) => {
 
   const updateSearch = (event) => {
     setSearchQuery(event.target.value);
-    console.log(searchQuery);
   };
 
   return (
