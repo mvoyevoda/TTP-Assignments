@@ -14,8 +14,8 @@ const Navbar = ({ searchQuery, setSearchQuery }) => {
       <h1>Book Review Forum</h1>
       <div className="right">
         <a href="../index.html">Books</a>
-        <a href="../favorites.html">Favorites</a>
-        <a href="../addBook.html">Add Book</a>
+        <a href="../src/favorites.jsx">Favorites</a>
+        <a href="../src/addBook.jsx">Add Book</a>
         <img
           className="search-icon"
           onClick={expandSearchBar}
