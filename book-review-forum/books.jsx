@@ -1,8 +1,9 @@
 class Book {
-    constructor(title, author, genre) {
+    constructor(title, author, genre, image) {
         this.title = title;
         this.author = author;
         this.genre = genre;
+        this.image = image;
         this.rating = null;
     }
 }
@@ -156,5 +157,5 @@ const books = [
       },
   ];
   
-  export default books;
+  export { Book, books };
   

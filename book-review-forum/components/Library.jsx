@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import books from "../books";
+import { Book, books } from '../books.jsx';
 
 const Library = ({ searchQuery }) => {
 

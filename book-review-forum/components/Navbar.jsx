@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ searchQuery, setSearchQuery }) => {
 
@@ -13,9 +14,9 @@ const Navbar = ({ searchQuery, setSearchQuery }) => {
     <nav>
       <h1>Book Review Forum</h1>
       <div className="right">
-        <a href="../index.html">Books</a>
-        <a href="../src/favorites.jsx">Favorites</a>
-        <a href="../src/addBook.jsx">Add Book</a>
+        <Link to="/">Books</Link>
+        <Link to="/favorites">Favorites</Link>
+        <Link to="/addBook">Add Book</Link>
         <img
           className="search-icon"
           onClick={expandSearchBar}
@@ -34,47 +35,3 @@ const Navbar = ({ searchQuery, setSearchQuery }) => {
 };
 
 export default Navbar;
-
-
-
-// import React, { useState } from 'react';
-
-// const Navbar = ({ handleSearch }) => {
-
-//   const [search, setSearch] = useState(false);
-
-//   const expandSearchBar = () => {
-//     setSearch(true);
-//   };
-
-//   const executeSearch = (event) => {
-//     const value = event.target.value;
-//     // setSearch(value);
-//     executeSearch(value);
-//     console.log(searchQuery)
-//   };
-
-//   return (
-//     <nav>
-//       <h1>Book Review Forum</h1>
-//       <div className="right">
-//         <a href="../index.html">Books</a>
-//         <a href="../favorites.html">Favorites</a>
-//         <a href="../addBook.html">Add Book</a>
-//         <img
-//           className="search-icon"
-//           onClick={expandSearchBar}
-//           src="../assets/search-icon.png"
-//           alt="Search Icon"
-//         />
-//         <input
-//           className={`searchbar ${search ? 'open' : ''}`}
-//           placeholder="search..."
-//           onInput={executeSearch}
-//         />
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;

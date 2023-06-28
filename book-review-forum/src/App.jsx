@@ -1,20 +1,32 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Library from '../components/Library';
-// import addBook from './addBook';
+import AddBook from '../components/AddBook';
+import { Book, books } from '../books.jsx';
 
 function App() {
 
   const [searchQuery, setSearchQuery] = useState('');
+
+  const addBook = (book) => {
+    books.push(book)
+  };
+
   const handleSearch = (value) => {
     setSearchQuery(value);
   };
 
+  // console.log(books)
+
   return (
-    <>
+    <Router>
       <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <Library searchQuery={searchQuery} />
-    </>
+      <Routes>
+        <Route path="/" element={<Library searchQuery={searchQuery} books={books} />} />
+        <Route path="/addBook" element={<AddBook addBook={addBook} />} />
+      </Routes>
+    </Router>
   );
 }
 
