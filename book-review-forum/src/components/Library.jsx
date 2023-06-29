@@ -8,7 +8,7 @@ const Library = ({ searchQuery }) => {
   async function fetchBooks() {
     const response = await fetch('http://localhost:3000/books');
     const books = await response.json();
-    console.log("FETCHED BOOKS: " + books)
+    // console.log("FETCHED BOOKS: " + books)
     setDisplayedBooks(books);
   }
 
