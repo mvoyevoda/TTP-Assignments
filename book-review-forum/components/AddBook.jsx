@@ -1,41 +1,64 @@
 import React, { useState } from 'react';
-import { Book, books } from '../books.jsx';
-// import '../styles/AddBook.css'
-import '../styles/AddBook.css'
+import '../styles/AddBook.css';
 
 const AddBook = ({ addBook }) => {
+  const initialBookState = {
+    title: '',
+    author: '',
+    genre: '',
+    image: '',
+  };
+  const [book, setBook] = useState(initialBookState);
 
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-  const [genre, setGenre] = useState('');
-  const [image, setImage] = useState('');
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setBook((prevBook) => ({
+      ...prevBook,
+      [name]: value,
+    }));
+  };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    addBook(new Book(title, author, genre, image));
-    setTitle('');
-    setAuthor('');
-    setGenre('');
-    setImage('');
+
+    try {
+      const response = await fetch('http://localhost:3000/books', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(book),
+      });
+
+      if (response.ok) {
+        const addedBook = await response.json();
+        addBook(addedBook);
+        setBook(initialBookState);
+      } else {
+        console.log('Error:', response.statusText);
+      }
+    } catch (error) {
+      console.log('Error:', error.message);
+    }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <label>
         Title:
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
+        <input type="text" name="title" value={book.title} onChange={handleChange} required />
       </label>
       <label>
         Author:
-        <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} required />
+        <input type="text" name="author" value={book.author} onChange={handleChange} required />
       </label>
       <label>
         Genre:
-        <input type="text" value={genre} onChange={(e) => setGenre(e.target.value)} required />
+        <input type="text" name="genre" value={book.genre} onChange={handleChange} required />
       </label>
       <label>
         Image Link:
-        <input type="text" value={image} onChange={(e) => setImage(e.target.value)} required />
+        <input type="text" name="image" value={book.image} onChange={handleChange} required />
       </label>
       <input type="submit" value="Add Book" />
     </form>

@@ -5,17 +5,29 @@ const Library = ({ searchQuery }) => {
 
   const [displayedBooks, setDisplayedBooks] = useState([]);
 
+  async function fetchBooks() {
+    const response = await fetch('http://localhost:3000/books');
+    const books = await response.json();
+    console.log("FETCHED BOOKS: " + books)
+    setDisplayedBooks(books);
+  }
+
   useEffect(() => {
-    if (searchQuery === '') {
-      setDisplayedBooks(books);
-    } else {
-      console.log(searchQuery);
-      const filteredBooks = books.filter((book) =>
-        checkTitle(book.title, book.author, book.genre, searchQuery)
-      );
-      setDisplayedBooks(filteredBooks);
-    }
+    const fetchData = async () => {
+      if (searchQuery === '') {
+        await fetchBooks();
+      } else {
+        console.log(searchQuery);
+        const fetchedBooks = await fetchBooks();
+        const filteredBooks = fetchedBooks.filter((book) =>
+          checkTitle(book.title, book.author, book.genre, searchQuery)
+        );
+        setDisplayedBooks(filteredBooks);
+      }
+    };
+    fetchData();
   }, [searchQuery]);
+  
 
   const checkTitle = (title, author, genre, searchQuery) => {
 
@@ -55,7 +67,18 @@ const Library = ({ searchQuery }) => {
     <img src={book.image} alt={`book-${index}`} key={index} />
   ));
 
-  return <div className="library">{display}</div>;
+  return (
+    <div className="library">
+      {displayedBooks.length === 0 ? (
+        <p>Loading...</p>
+      ) : (
+        displayedBooks.map((book, index) => (
+          <img src={book.image} alt={`book-${index}`} key={index} />
+        ))
+      )}
+    </div>
+  );
+  
 };
 
 export default Library;
