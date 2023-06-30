@@ -13,7 +13,7 @@
           "rating": 5
         }
       ],
-      "id": 503
+      "id": 0
     },
     {
       "title": "Pride and Prejudice",
@@ -28,7 +28,7 @@
           "rating": 4.3
         }
       ],
-      "id": 0
+      "id": 1
     },
     {
       "title": "1984",
@@ -49,7 +49,7 @@
           "rating": 4.8
         }
       ],
-      "id": 233
+      "id": 2
     },
     {
       "title": "The Catcher in the Rye",
@@ -64,7 +64,7 @@
           "rating": 3.2
         }
       ],
-      "id": 30
+      "id": 3
     },
     {
       "title": "The Lord of the Rings",
@@ -79,7 +79,7 @@
           "rating": 4.4
         }
       ],
-      "id": 20
+      "id": 4
     },
     {
       "title": "To Kill a Mockingbird",
@@ -94,7 +94,7 @@
           "rating": 4.1
         }
       ],
-      "id": 230
+      "id": 5
     },
     {
       "title": "The Chronicles of Narnia",
@@ -109,7 +109,7 @@
           "rating": 3.1
         }
       ],
-      "id": 12
+      "id": 6
     },
     {
       "title": "Harry Potter and the Sorcerer's Stone",
@@ -124,7 +124,7 @@
           "rating": 3
         }
       ],
-      "id": 25
+      "id": 7
     },
     {
       "title": "The Alchemist",
@@ -139,7 +139,7 @@
           "rating": 4.1
         }
       ],
-      "id": 22
+      "id": 8
     },
     {
       "title": "The Hitchhiker's Guide to the Galaxy",
@@ -154,36 +154,7 @@
           "rating": 3.9
         }
       ],
-      "id": 2
-    },
-    {
-      "title": " Guide to the Galaxy",
-      "author": "Cheese",
-      "genre": "science fiction",
-      "image": "../assets/galaxy.jpg",
-      "comments": [
-        {
-          "name": "Michael S",
-          "comment": "A hilarious and clever space adventure that will leave you laughing.",
-          "date": null,
-          "rating": 3.9
-        }
-      ],
-      "id": 504
-    },
-    {
-      "title": "f",
-      "author": "f",
-      "genre": "f",
-      "image": "f",
-      "id": 505
-    },
-    {
-      "title": "f",
-      "author": "f",
-      "genre": "f",
-      "image": "f",
-      "id": 506
+      "id": 9
     }
   ]
 }

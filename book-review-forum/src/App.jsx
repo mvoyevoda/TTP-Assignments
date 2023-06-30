@@ -8,16 +8,9 @@ import { Book, books } from './books.jsx';
 function App() {
 
   const [searchQuery, setSearchQuery] = useState('');
-
-  // const addBook = (book) => {
-  //   books.push(book)
-  // };
-console.log('good book', books[0])
   const handleSearch = (value) => {
     setSearchQuery(value);
   };
-
-  // console.log(books)
 
   return (
     <Router>

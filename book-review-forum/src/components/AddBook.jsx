@@ -11,60 +11,35 @@ const AddBook = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Create a book object using the current value of each input
     const book = {
       title: titleRef.current.value,
       author: authorRef.current.value,
       genre: genreRef.current.value,
       image: imageRef.current.value,
-      // title: "test",
-      // author: "test",
-      // genre: "test",
-      // image: "test"
     };
 
-    fetch('http://localhost:3000/books', {
+    const response = fetch('http://localhost:3000/books', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(book),
     })
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.error('Error:', error));
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP ERROR! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      alert('Book Uploaded Successfully!');
+      // console.log(data) // if you still want to log the data
+    })
+    .catch((error) => {
+      console.error('ERROR:', error);
+      alert('Book upload failed. Please try again.');
+    });  
 
-  //  const g = {'rfreert': 3};
-  //   try {
-  //     console.log('Sending:', book); // Log the book object
-
-  //     const response = await fetch('http://localhost:3000/Books', {
-  //       // credentials: "*same-origin",
-  //       // mode: "*cors",
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify(book),
-  //     });
-
-  //     // return response.json()
-  //     console.log(response);
-
-  //     if (response.ok) {
-  //       // Reset form fields
-  //      const stuff = await response.json()
-  //       titleRef.current.value = '';
-  //       authorRef.current.value = '';
-  //       genreRef.current.value = '';
-  //       imageRef.current.value = '';
-  //       console.log(stuff)
-  //     } else {
-  //       console.error(`Error: ${response.status} ${response.statusText}`);
-  //     }
-  //   } catch (error) {
-  //     console.error('Error:', error.status);
-  //   }
   };
 
   return (
@@ -87,7 +62,7 @@ const AddBook = () => {
           Image Link:
           <input type="text" name="image" ref={imageRef} required />
         </label>
-        <input type="submit" value="Add Book" />
+        <input className="submit-btn" type="submit" value="Add Book" />
       </form>
     </>
   );
