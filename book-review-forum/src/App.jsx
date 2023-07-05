@@ -4,7 +4,6 @@ import Navbar from './components/Navbar';
 import Library from './components/Library';
 import AddBook from './components/AddBook';
 import ViewBook from './components/ViewBook'
-import { Book, books } from './books.jsx';
 
 function App() {
 
@@ -17,9 +16,9 @@ function App() {
     <Router>
       <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <Routes>
-        <Route path="/" element={<Library searchQuery={searchQuery} books={books} />} />
+        <Route path="/" element={<Library searchQuery={searchQuery} />} />
         <Route path="/AddBook" element={<AddBook />} />
-        <Route path="/ViewBook/:index" component={ViewBook} />
+        <Route path="/ViewBook/:id" element={<ViewBook />} />
       </Routes>
     </Router>
   );

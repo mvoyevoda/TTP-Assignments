@@ -1,0 +1,57 @@
+nav {
+    background-color: rgb(88, 88, 7);
+    margin: 0;
+    padding: 15px 40px 15px 40px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: antiquewhite;
+    align-items: center;
+  }
+  
+  nav .right {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav h1 {
+    margin-right: 30px;
+  }
+  
+  nav .right a {
+    text-decoration: none;
+    color: antiquewhite;
+    margin: 40px;
+  }
+  
+  nav .right a:hover {
+    color: rgb(175, 171, 171);
+  }
+  
+  .search-icon {
+    width: 15px;
+    margin-left: 45px;
+    cursor: pointer;
+  }
+  
+  .searchbar {
+    margin: 20px;
+    width: 0;
+    transition: width 2s ease-out;
+    visibility: hidden; /* Hidden by default */
+    background-color: white;
+    color: black;
+    border: none;
+    outline: none;
+    font-size: medium;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .searchbar.open {
+    width: 100%;
+    visibility: visible;
+  }

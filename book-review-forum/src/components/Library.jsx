@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Book, books } from '../books.jsx';
+import '../styles/Library.css';
 
 const Library = ({ searchQuery }) => {
 
@@ -72,7 +72,7 @@ const Library = ({ searchQuery }) => {
           <div className="book-container" key={index}>
             <img src={book.image} alt={`book-${index}`} />
             <div className="overlay">
-              <Link to={`/ViewBook/book-${index}`}>
+              <Link to={`/ViewBook/${index}`}>
                 <button className="view-button">View</button>
               </Link>
             </div>
