@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Library from './components/Library';
 import AddBook from './components/AddBook';
+import ViewBook from './components/ViewBook'
 import { Book, books } from './books.jsx';
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
       <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <Routes>
         <Route path="/" element={<Library searchQuery={searchQuery} books={books} />} />
-        <Route path="/addBook" element={<AddBook />} />
+        <Route path="/AddBook" element={<AddBook />} />
+        <Route path="/ViewBook/:index" component={ViewBook} />
       </Routes>
     </Router>
   );

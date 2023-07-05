@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Book, books } from '../books.jsx';
 
 const Library = ({ searchQuery }) => {
@@ -71,7 +72,9 @@ const Library = ({ searchQuery }) => {
           <div className="book-container" key={index}>
             <img src={book.image} alt={`book-${index}`} />
             <div className="overlay">
-              <button className="view-button">View</button>
+              <Link to={`/ViewBook/book-${index}`}>
+                <button className="view-button">View</button>
+              </Link>
             </div>
           </div>
         ))
