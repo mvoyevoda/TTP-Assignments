@@ -61,11 +61,6 @@ const Library = ({ searchQuery }) => {
     return false;
 
   };
-  
-
-  // const display = displayedBooks.map((book, index) => (
-  //   <img src={book.image} alt={`book-${index}`} key={index} />
-  // ));
 
   return (
     <div className="library">
@@ -73,12 +68,12 @@ const Library = ({ searchQuery }) => {
         <p>Loading...</p>
       ) : (
         displayedBooks.map((book, index) => (
-          <>
-            <img src={book.image} alt={`book-${index}`} key={index} />
+          <div className="book-container" key={index}>
+            <img src={book.image} alt={`book-${index}`} />
             <div className="overlay">
               <button className="view-button">View</button>
             </div>
-          </>
+          </div>
         ))
       )}
     </div>
