@@ -1,36 +1,6 @@
 {
   "books": [
     {
-      "title": "The Great Gatsby",
-      "author": "F. Scott Fitzgerald",
-      "genre": "classic",
-      "image": "../assets/gatsby.jpeg",
-      "comments": [
-        {
-          "name": "George P",
-          "comment": "This is a wonderful classic that everybody should read at least once!",
-          "date": null,
-          "rating": 5
-        }
-      ],
-      "id": 0
-    },
-    {
-      "title": "Pride and Prejudice",
-      "author": "Jane Austen",
-      "genre": "classic",
-      "image": "../assets/pride.jpg",
-      "comments": [
-        {
-          "name": "Emily W",
-          "comment": "A timeless romance novel that captures the complexities of society.",
-          "date": null,
-          "rating": 4.3
-        }
-      ],
-      "id": 1
-    },
-    {
       "title": "1984",
       "author": "George Orwell",
       "genre": "dystopian",
