@@ -16,7 +16,6 @@ const Navbar = ({ searchQuery, setSearchQuery }) => {
       <h1>Book Review Forum</h1>
       <div className="right">
         <Link to="/">Books</Link>
-        <Link to="/favorites">Favorites</Link>
         <Link to="/addBook">Add Book</Link>
         <img
           className="search-icon"

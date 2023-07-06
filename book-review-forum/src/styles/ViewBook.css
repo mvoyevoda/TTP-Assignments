@@ -22,6 +22,7 @@
     flex-direction: column;
     text-align: center;
     /* align-items: center; */
+    /* background-color: red; */
 }
 
 .review-container {
@@ -34,4 +35,6 @@
 
 .reviews {
     text-align: center;
+    /* background-color: red; */
+    width: 50%;
 }
