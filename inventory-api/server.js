@@ -31,40 +31,105 @@ app.get("/", (req, res) => {
   res.send("Welcome to the Book Inventory API");
 });
 
-// List all jobs
+// Fetch books from the database
 app.get("/books", (req, res) => {
-  // Fetch books from the database
+
   pool.query('SELECT * FROM books', (error, result) => {
     if (error) {
       console.error('Error retrieving books:', error);
       res.status(500).send('Internal Server Error');
     } else {
-      const books = result.rows; // Store the fetched books in a constant
+      const books = result.rows;
       res.send(books);
     }
   });
+
 });
 
-// app.get("/books/:id", (req, res) => {
-//   const bookId = req.params.id; // Get the book ID from the request parameters
-  
-//   // Fetch a specific book from the database
-//   pool.query(`SELECT * FROM books WHERE id = $1`, [bookId], (error, result) => {
-//     if (error) {
-//       console.error('Error retrieving book:', error);
-//       res.status(500).send('Internal Server Error');
-//     } else {
-//       const book = result; // Access the first row of the result
-//       res.send(book);
-//     }
-//   });
-// });
+ // Fetch a specific book from the database
+ app.get("/books/:id", (req, res) => {
+
+  const bookId = req.params.id; // Get the book ID from the request parameters
+  pool.query(`SELECT * FROM books WHERE id = $1`, [bookId], (error, result) => {
+    if (error) {
+      console.error('Error retrieving book:', error);
+      res.status(500).send('Internal Server Error');
+    } else {
+      if (result.rows.length === 0) {
+        res.status(404).send('Book not found');
+      } else {
+        const book = result.rows[0]; // Access the first row of the result
+        res.send(book);
+      }
+    }
+  });
+
+});
+
+app.post("/books", (req, res) => {
+  const { title, author, genre, quantity } = req.body;
+
+  // Insert the new book into the database
+  pool.query(
+    `INSERT INTO books (title, author, genre, quantity) VALUES ($1, $2, $3, $4) RETURNING *`,
+    [title, author, genre, quantity],
+    (error, result) => {
+      if (error) {
+        console.error('Error creating book:', error);
+        res.status(500).send('Internal Server Error');
+      } else {
+        const createdBook = result.rows[0]; // Access the first row of the result
+        res.status(201).json(createdBook);
+      }
+    }
+  );
+});
+
+app.patch("/books/:id", (req, res) => {
+  const bookId = req.params.id;
+  const { title, author, genre, quantity } = req.body;
+
+  // Update the book in the database
+  pool.query(
+    `UPDATE books SET title = $1, author = $2, genre = $3, quantity = $4 WHERE id = $5 RETURNING *`,
+    [title, author, genre, quantity, bookId],
+    (error, result) => {
+      if (error) {
+        console.error('Error updating book:', error);
+        res.status(500).send('Internal Server Error');
+      } else {
+        if (result.rows.length === 0) {
+          res.status(404).send('Book not found');
+        } else {
+          const updatedBook = result.rows[0]; // Access the first row of the result
+          res.json(updatedBook);
+        }
+      }
+    }
+  );
+});
+
+app.delete("/books/:id", (req, res) => {
+  const bookId = req.params.id;
+
+  // Delete the book from the database
+  pool.query(
+    `DELETE FROM books WHERE id = $1 RETURNING *`,
+    [bookId],
+    (error, result) => {
+      if (error) {
+        console.error('Error deleting book:', error);
+        res.status(500).send('Internal Server Error');
+      } else {
+        if (result.rows.length === 0) {
+          res.status(404).send('Book not found');
+        } else {
+          const deletedBook = result.rows[0]; // Access the first row of the result
+          res.json(deletedBook);
+        }
+      }
+    }
+  );
+});
 
 
-
-// // Get a specific job
-// app.get("/books/:id", (req, res) => {
-// const bookId = parseInt(req.params.id, 10);
-// const book = jobs.find((book) => book.id === bookId);
-// res.send(book);
-// });
