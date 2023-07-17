@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "mvoyevoda",
+    "password": 2001,
+    "database": "bloggingplatform",
+    "host": "localhost",
+    "dialect": "postgresql"
+  },
+  "test": {
+    "username": "mvoyevoda",
+    "password": 2001,
+    "database": "bloggingplatform",
+    "host": "localhost",
+    "dialect": "postgresql"
+  },
+  "production": {
+    "username": "mvoyevoda",
+    "password": 2001,
+    "database": "bloggingplatform",
+    "host": "localhost",
+    "dialect": "postgresql"
+  }
+}
