@@ -1,19 +1,21 @@
 require('dotenv').config()
 const express = require('express');
-const app = express()
-const port = 4000
+const app = express();
+const routes = require('./routes');
+const port = 4000;
+
+// Middleware
+app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
+
+// Mount routes
+app.use('/api', routes);
+
+app.get('/', (req, res) => {
+  res.send("Welcome to the Blogging Platform!")
+});
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
-
-app.get('/', (req, res) => {
-  res.send("<h1>Welcome to the Blogging Platform!</h1>")
-});
-
-// Endpoints for users
-app.get('/users', (req, res) => {
-  
-  // res.send(users)
+  console.log(`Server started on port ${port}`);
 });
