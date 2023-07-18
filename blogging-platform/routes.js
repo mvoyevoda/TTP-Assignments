@@ -63,7 +63,7 @@ router.post('/posts', async (req, res) => {
   }
 });
 
-router.put('/posts/:id', async (req, res) => {
+router.patch('/posts/:id', async (req, res) => {
   try {
     const postId = req.params.id; // Get the post ID from the request parameters
     const { author, content } = req.body; // Get updated post data from the request body
@@ -76,8 +76,12 @@ router.put('/posts/:id', async (req, res) => {
     }
 
     // Update the post with new data
-    post.author = author;
-    post.content = content;
+    if (author) {
+      post.author = author;
+    }
+    if (content) {
+      post.content = content;
+    }
     await post.save();
 
     res.json(post); // Return the updated post in the response
@@ -86,7 +90,6 @@ router.put('/posts/:id', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
-
 
 router.delete('/posts/:id', async (req, res) => {
   try {
